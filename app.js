@@ -2,15 +2,15 @@ var menuOne=[{name:"hotdoge",decription:"Tumblr Hot Dog",price:6.50,id:0,menu:"m
 
 function menuAdd(menu,name,desc,price,menuName){
     
-    for(i=0;i<menu.length;i++){
+    for(var i=0;i<menu.length;i++){
         var spot=menu[i]
     // // IF key in menu = name notify user object exists
-    //     if(spot.id==i+1){
-    //     //    console.log("Oopsie. DuplicateS")
-    //     }else{
+        if(spot.id==i+1){
+             console.log("Oopsie. DuplicateS")
+        }else{
     // // ELSE push Item object to list of menu
             menu.push({name:name,decription:desc,price:price,id:i,menu:menuName,})
-        // }
+        }
     }
 }
 
@@ -28,7 +28,7 @@ function menuDelete(menu,item){
 
 function update(menu){
     // Update Menu List
-    for(i=0;i<menu.length;i++){
+    for(var i=0;i<menu.length;i++){
         var spot=menu[i]
         $('#list').append(`${spot.name} -- ${spot.decription} for $${spot.price} <br>`)
     }
