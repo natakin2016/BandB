@@ -1,40 +1,64 @@
-var menuOne=[{name:"hotdoge",decription:"Tumblr Hot Dog",price:6.50,id:0,menu:"menuOne"}]
+var menus=[,]
+function Id(arr){
+    		var id
+        for(var i=0;i<arr.length;i++){
+        	id=i+1  
+        }
+        console.log(id)
+        return id
 
-function menuAdd(menu,name,desc,price,menuName){
+    }
+//Menu Creation 
+    function Menu(name,place,phoneNum){
+
+        this.menuName=name
+        this.place=place
+        this.phoneNum=phoneNum
+        this.items=[]
+        this.identification
+        // menus.push(this)
+    }
+    function addNewMenu(name,place,phoneNum){
+        var menuId=Id(menus).toString()
+        menus.push(new Menu(name,place,phoneNum,menuId))
+    }
+    $('#addNewMenu').click(function(){
+        debugger
+        
+        var name=$('#menuName').val()
     
-    for(var i=0;i<menu.length;i++){
-        var spot=menu[i]
-    // // IF key in menu = name notify user object exists
-        if(spot.id==i+1){
-             console.log("Oopsie. DuplicateS")
-        }else{
-    // // ELSE push Item object to list of menu
-            menu.push({name:name,decription:desc,price:price,id:i,menu:menuName,})
+        var place=$('#place').val()
+        var num=$('#phone').val()
+        addNewMenu(name,place,num)
+        console.log(`Menu ${name} was Added`)
+    })
+    
+    
+//Item Creation
+    function Item(name,desc,price){
+        this.itemName=name
+        this.desc=desc
+        this.price=price
+    }
+    function addItem(itemName,desc,price,menu){
+        for(var i=0;i<menus.length;i++){
+            var spot=menus[i]
+            if(spot!==undefined && spot.menuName==menu)
+            spot["items"].push(new Item(itemName,desc,price))
         }
     }
-}
-
-function menuModify(menu,item){
-    //console.log(item)
-    // Open Item Modification form
-
-    update(menu)
-}
-
-function menuDelete(menu,item){
-
-    update(menu)
-}
-
-function update(menu){
-    // Update Menu List
-    for(var i=0;i<menu.length;i++){
-        var spot=menu[i]
-        $('#list').append(`${spot.name} -- ${spot.decription} for $${spot.price} <br>`)
+//Draw Functions
+function draw(menu){
+    $('#info').append(`this menu is ${menus[menu].menuName} <br>`)
+    for(var i=0;i<menus[menu].items.length;i++){
+        var spot=menus[menu].items[i]
+       $('#info').append(`${spot.itemName} -- ${spot.desc} --$${spot.price}`)
     }
 }
-
-menuAdd(menuOne,"Hot jack","Tis a hotdog with pepper jack cheesen",50,"menuOne")
-// menuAdd(menuOne,"hotdog","Sausage with bun",5,"menuOne")
-console.log(menuOne)
-update(menuOne)
+//Calls
+    addNewMenu("test","42 Wallaby Way","867.5309")
+    addNewMenu("test2","42 Wallaby Way","867.5309")
+    addItem("basic bitch","Hotdog on a glutain and fat free bun with ketchup mustard and sass","More money than you spent on your car","test")
+    addItem("basic bitch","Hotdog on a glutin and fat free bun with ketchup mustard and sass","More money than you spent on your car","test2")
+    console.log(menus)
+    draw(1)
