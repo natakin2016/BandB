@@ -6,3 +6,20 @@ body{
 .visualizer{
     border: 5px solid lime;
 }
+.lobster{
+    font-family: 'Lobster', cursive;
+}
+.raleway{
+    font-family: 'Raleway', sans-serif;
+}
+
+#header{
+  margin-bottom:5%;
+}
+.maincontent{
+    background: white;
+    color:black;
+    padding:1%;
+}
+
+
