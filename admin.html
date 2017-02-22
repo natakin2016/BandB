@@ -1,60 +1,154 @@
 <!DOCTYPE html> 
 <html> 
     <head>
-        <title></title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="style.css">
-        <link rel="icon" href="data:;base64,=">
+        <title>B&B Classic Dogs</title>
+        <!--Stylesheets-->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+            <link href="https://fonts.googleapis.com/css?family=Lobster|Raleway" rel="stylesheet">
+            <link rel="stylesheet" href="style.css">
+            <link rel="icon" href="data:;base64,=">
+            
     </head> 
     <body> 
-        <section id="header" class="row">
-            <h1 class="title col-md-offset-1">B&B Classic Dogs</h1>
-        </section>
-        <section id="content" class="row">
-            <form class="form-horizontal">
-                <fieldset>
+             <section id="header" class="row lobster ">
+                <h1 class="col-md-offset-3 col-md-6">B&B Classic Dogs</h1>
 
-                    <!-- Form Name -->
-                    <legend class="col-md-offest-3">Create A New Menu</legend>
+             </section>
+                <nav class="navbar navbar-default navbar-static-top">
+                        <h3  style="text-align:center;">
+                            Welcome to the Admin Page
+                        </h3>
+                    </nav>
+             <section class="row" >
+                 <div class="col-md-offset-2 col-md-8">
+                       <!-- Button trigger modal -->
+                        <form class="form-horizontal">
+<fieldset>
 
-                    <!-- Text input-->
-                    <div class="form-group">
-                    <label class="col-md-4 control-label" for="menuName">Menu Name</label>  
-                    <div class="col-md-4">
-                    <input id="menuName" name="menuName" type="text" placeholder="B&amp;B Original " class="form-control input-md" required="">
-                    <span class="help-block">This is what you will call the menu in the software</span>  
-                    </div>
-                    </div>
+<!-- Form Name -->
+<legend>Form Name</legend>
 
-                    <!-- Text input-->
-                    <div class="form-group">
-                    <label class="col-md-4 control-label" for="place">Address</label>  
-                    <div class="col-md-4">
-                    <input id="place" name="place" type="text" placeholder="42 Wallaby Way, Sydney, Australia " class="form-control input-md">
-                        
-                    </div>
-                    </div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="name">Menu Name</label>  
+  <div class="col-md-4">
+  <input id="name" name="name" type="text" placeholder="Classic" class="form-control input-md">
+    
+  </div>
+</div>
 
-                    <!-- Text input-->
-                    <div class="form-group">
-                    <label class="col-md-4 control-label" for="phone">Phone Number</label>  
-                    <div class="col-md-4">
-                    <input id="phone" name="phone" type="text" placeholder="867-5309" class="form-control input-md">
-                        
-                    </div>
-                    </div>
-                                        <!-- Button -->
-                    <div class="form-group">
-                    <div class="col-md-4">
-                        <button id="addNewMenu" name="singlebutton" class="btn btn-primary">Button</button>
-                    </div>
-                    </div>
-                </fieldset>
-            </form>
-        </section>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="address">Address</label>  
+  <div class="col-md-4">
+  <input id="address" name="address" type="text" placeholder="42 Wallaby Way, Sydney " class="form-control input-md">
+    
+  </div>
+</div>
 
-        <!--Scripts Below Here-->
-            <script  src="https://code.jquery.com/jquery-2.2.4.min.js"></script> 
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="phone">Phone Number</label>  
+  <div class="col-md-4">
+  <input id="phone" name="phone" type="text" placeholder="867.5309" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="monday">Monday Hours</label>  
+  <div class="col-md-4">
+  <input id="monday" name="monday" type="text" placeholder="8am -8pm" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="tuesday">Tuesday Hours</label>  
+  <div class="col-md-4">
+  <input id="tuesday" name="tuesday" type="text" placeholder="8am-8pm" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="wednesday">Wednesday Hours</label>  
+  <div class="col-md-4">
+  <input id="wednesday" name="wednesday" type="text" placeholder="8am-8pm" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="thursday">Thursday Hours</label>  
+  <div class="col-md-4">
+  <input id="thursday" name="thursday" type="text" placeholder="8am-8pm" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="friday">Friday Hours</label>  
+  <div class="col-md-4">
+  <input id="friday" name="friday" type="text" placeholder="8am-8pm" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="saturday">Saturday Hours</label>  
+  <div class="col-md-4">
+  <input id="saturday" name="saturday" type="text" placeholder="8am-8pm" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="sunday">Sunday Hours</label>  
+  <div class="col-md-4">
+  <input id="sunday" name="sunday" type="text" placeholder="8am-8pm" class="form-control input-md">
+    
+  </div>
+</div>
+
+</fieldset>
+<button id="createMenu" type="button" >Create New Menu</button>
+</form>
+             
+                 </div>
+                 <p id="menus"></p>
+
+            
+             </section>
+
+
+        <!--Scripts-->
+           <script  src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+           <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+          <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+            <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyCJQ5pekW_F421D1uTlK35M4Tdy0BGOocs",
+                authDomain: "bandb-21b99.firebaseapp.com",
+                databaseURL: "https://bandb-21b99.firebaseio.com",
+                storageBucket: "bandb-21b99.appspot.com",
+                messagingSenderId: "714417219935"
+            };
+            firebase.initializeApp(config);
+            </script>
             <script  src="app.js"></script> 
+
     </body> 
 </html>
+        
+           
