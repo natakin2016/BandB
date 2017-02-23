@@ -1,5 +1,5 @@
 body{
-    /*background:#BF0300;*/
+    /*background:#ff4c4c;*/
     /*color:white;*/
     font-size:18px;
 }
@@ -29,6 +29,12 @@ ul{
 }
 .raleway{
     font-family: 'Raleway', sans-serif;
+}
+.chalk{
+    font-family: 'Coming Soon', cursive;
+    color:white;
+    background:#1E2427;
+    text-align: center;
 }
 
 #header{
