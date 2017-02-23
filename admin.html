@@ -1,141 +1,160 @@
-<!DOCTYPE html> 
-<html> 
-    <head>
-        <title>B&B Classic Dogs</title>
-        <!--Stylesheets-->
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-            <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
-            <link href="https://fonts.googleapis.com/css?family=Lobster|Raleway" rel="stylesheet">
-            <link rel="stylesheet" href="style.css">
-            <link rel="icon" href="data:;base64,=">
-            
-    </head> 
-    <body> 
-             <section id="header" class="row lobster ">
-                <h1 class="col-md-offset-3 col-md-6">B&B Classic Dogs</h1>
+<!DOCTYPE html>
+<html>
 
-             </section>
-                <nav class="navbar navbar-default navbar-static-top">
-                        <h3  style="text-align:center;">
-                            Welcome to the Admin Page
-                        </h3>
-                    </nav>
-             <section class="row" >
-                 <div class="col-md-offset-2 col-md-8">
-                       <!-- Button trigger modal -->
-                        <form class="form-horizontal">
-<fieldset>
+<head>
+    <title>B&B Classic Dogs</title>
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:;base64,=">
+</head>
 
-<!-- Form Name -->
-<legend>Form Name</legend>
+<body>
+    <section id="header" class="row lobster ">
+        <h1 class="col-md-offset-3 col-md-6">B&B Classic Dogs</h1>
+    </section>
+    <nav class="navbar navbar-default navbar-static-top">
+        <h3 style="text-align:center;">
+            Welcome to the Admin Page
+        </h3>
+    </nav>
+    <section class="row raleway">
+      
+        <div class="col-md-offset-2 col-md-3">
+            <!-- Button trigger modal -->
+            <h3 >Menus</h3>
+            <ul id="menus">
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="name">Menu Name</label>  
-  <div class="col-md-4">
-  <input id="name" name="name" type="text" placeholder="Classic" class="form-control input-md">
-    
+            </ul>
+            <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#createMenu">
+                    Create A Menu
+            </button>
+        </div>
+        
+        <!-- Menu Modal -->
+            <div class="modal fade" id="createMenu" tabindex="-1" role="dialog" aria-labelledby="createMenuLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="createMenuLabel">Create A Menu</h4>
+                        </div>
+                        <div class="modal-body">
+                            <fieldset>
+                                <!-- Form Name -->
+                                <legend>Create a Menu</legend>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Menu Name</label>
+                                    <div class="col-md-6">
+                                        <input id="name" name="name" type="text" placeholder="Classic" class="form-control input-md">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="address">Address</label>
+                                    <div class="col-md-6">
+                                        <input id="address" name="address" type="text" placeholder="42 Wallaby Way, Sydney " class="form-control input-md">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="phone">Phone Number</label>
+                                    <div class="col-md-6">
+                                        <input id="phone" name="phone" type="text" placeholder="867.5309" class="form-control input-md">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="monday">Monday Hours</label>
+                                    <div class="col-md-6">
+                                        <input id="monday" name="monday" type="text" placeholder="8am -8pm" class="form-control input-md">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="tuesday">Tuesday Hours</label>
+                                    <div class="col-md-6">
+                                        <input id="tuesday" name="tuesday" type="text" placeholder="8am-8pm" class="form-control input-md">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="wednesday">Wednesday Hours</label>
+                                    <div class="col-md-6">
+                                        <input id="wednesday" name="wednesday" type="text" placeholder="8am-8pm" class="form-control input-md">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="thursday">Thursday Hours</label>
+                                    <div class="col-md-6">
+                                        <input id="thursday" name="thursday" type="text" placeholder="8am-8pm" class="form-control input-md">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="friday">Friday Hours</label>
+                                    <div class="col-md-6">
+                                        <input id="friday" name="friday" type="text" placeholder="8am-8pm" class="form-control input-md">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="saturday">Saturday Hours</label>
+                                    <div class="col-md-6">
+                                        <input id="saturday" name="saturday" type="text" placeholder="8am-8pm" class="form-control input-md">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="sunday">Sunday Hours</label>
+                                    <div class="col-md-6">
+                                        <input id="sunday" name="sunday" type="text" placeholder="8am-8pm" class="form-control input-md">
+                                    </div>
+                                </div>
+                            </fieldset>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button id="createMenu" class="btn btn-primary" type="button">Create New Menu</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#menu">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="menu" tabindex="-1" role="dialog" aria-labelledby="menuLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+         <h4 class="modal-title" id="menuLabel">Items on Menu</h4>
+      </div>
+      <div class="modal-body" id="menuBody">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
 </div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="address">Address</label>  
-  <div class="col-md-4">
-  <input id="address" name="address" type="text" placeholder="42 Wallaby Way, Sydney " class="form-control input-md">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="phone">Phone Number</label>  
-  <div class="col-md-4">
-  <input id="phone" name="phone" type="text" placeholder="867.5309" class="form-control input-md">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="monday">Monday Hours</label>  
-  <div class="col-md-4">
-  <input id="monday" name="monday" type="text" placeholder="8am -8pm" class="form-control input-md">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="tuesday">Tuesday Hours</label>  
-  <div class="col-md-4">
-  <input id="tuesday" name="tuesday" type="text" placeholder="8am-8pm" class="form-control input-md">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="wednesday">Wednesday Hours</label>  
-  <div class="col-md-4">
-  <input id="wednesday" name="wednesday" type="text" placeholder="8am-8pm" class="form-control input-md">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="thursday">Thursday Hours</label>  
-  <div class="col-md-4">
-  <input id="thursday" name="thursday" type="text" placeholder="8am-8pm" class="form-control input-md">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="friday">Friday Hours</label>  
-  <div class="col-md-4">
-  <input id="friday" name="friday" type="text" placeholder="8am-8pm" class="form-control input-md">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="saturday">Saturday Hours</label>  
-  <div class="col-md-4">
-  <input id="saturday" name="saturday" type="text" placeholder="8am-8pm" class="form-control input-md">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="sunday">Sunday Hours</label>  
-  <div class="col-md-4">
-  <input id="sunday" name="sunday" type="text" placeholder="8am-8pm" class="form-control input-md">
-    
-  </div>
-</div>
-
-</fieldset>
-<button id="createMenu" type="button" >Create New Menu</button>
-</form>
-             
-                 </div>
-                 <p id="menus"></p>
-
-            
-             </section>
-
-
-        <!--Scripts-->
-           <script  src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-           <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-          <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
-            <script>
+    </section>
+    <!--Scripts-->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+        <script>
             // Initialize Firebase
             var config = {
                 apiKey: "AIzaSyCJQ5pekW_F421D1uTlK35M4Tdy0BGOocs",
@@ -145,10 +164,9 @@
                 messagingSenderId: "714417219935"
             };
             firebase.initializeApp(config);
-            </script>
-            <script  src="app.js"></script> 
+        </script>
+        <script src="app.js"></script>
+</body>
 
-    </body> 
 </html>
-        
            
