@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset=utf-8 />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email/Password Authentication Example</title>
+
+<!--Stylesheets-->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+            <link href="https://fonts.googleapis.com/css?family=Lobster|Raleway" rel="stylesheet">
+            <link rel="stylesheet" href="style.css">
+            <link rel="icon" href="data:;base64,=">
+
+  <!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCJQ5pekW_F421D1uTlK35M4Tdy0BGOocs",
+    authDomain: "bandb-21b99.firebaseapp.com",
+    databaseURL: "https://bandb-21b99.firebaseio.com",
+    projectId: "bandb-21b99",
+    storageBucket: "bandb-21b99.appspot.com",
+    messagingSenderId: "714417219935"
+  };
+  firebase.initializeApp(config);
+</script>
+
+  <script type="text/javascript">
+    function toggleSignIn() {
+      if (firebase.auth().currentUser) {
+        firebase.auth().signOut();
+    
+      } else {
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        if (email.length < 4) {
+          alert('Please enter an email address.');
+          return;
+        }
+        if (password.length < 4) {
+          alert('Please enter a password.');
+          return;
+        }
+
+        // Sign in with email and pass.
+        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+    
+          if (errorCode === 'auth/wrong-password') {
+            alert('Wrong password.');
+          } else {
+            alert(errorMessage);
+          }
+          console.log(error);
+          document.getElementById('quickstart-sign-in').disabled = false;
+          
+        });
+        
+      }
+      document.getElementById('quickstart-sign-in').disabled = true;
+    }
+    
+    function initApp() {
+      // Listening for auth state changes.
+      
+      firebase.auth().onAuthStateChanged(function(user) {
+
+        if (user) {
+          // User is signed in.
+          console.log("user logged in")
+          console.log(user)
+          alert('Youve Been Logged in')
+          // log out cntrls n
+          document.getElementById('quickstart-sign-out').addEventListener('click', function(){
+                  console.log('Log out function started')
+                  firebase.auth().signOut();
+                  alert('You have been logged out') }, false);
+                
+  
+        } else {
+          // User is signed out.
+
+        }
+      
+        document.getElementById('quickstart-sign-in').disabled = false;
+      
+      });
+    
+      document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
+          
+    }
+    window.onload = function() {
+      initApp();
+    };
+  </script>
+</head>
+<body>
+          <section id="header" class="row lobster ">
+                <h1 class="col-md-offset-3 col-md-6">B&B Classic Dogs</h1>
+
+             </section>
+             <section class="row">
+                <div class="col-md-offset-3 col-md-6">
+                   <input c type="text" id="email" name="email" placeholder="Email"/>
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="password" id="password" name="password" placeholder="Password"/>
+                    <br/><br/>
+                    <button id="quickstart-sign-in" name="signin">Sign In</button>
+                    &nbsp;&nbsp;&nbsp;
+                    <button id="quickstart-sign-out" name="signOut">Sign Out</button>
+                    
+                </div>
+             </section>
+         
+
+          <!--&nbsp;&nbsp;&nbsp;
+          <button id="quickstart-verify-email" name="verify-email">Send Email Verification</button>
+          &nbsp;&nbsp;&nbsp;
+          <button id="quickstart-password-reset" name="verify-email">Send Password Reset Email</button>
+        </div>-->
+      </div>
+
+    </div>
+  </main>
+</div>
+</body>
+</html>

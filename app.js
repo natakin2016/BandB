@@ -12,15 +12,15 @@
     var db = firebase.database()
     var menusRef = firebase.database().ref('menus')
     var id = 0
-    var menus;
+    var snapshot;
     function updateDataList() {
         menusRef.on('value', function (snap) {
             var snapshot = snap.val()
-            localStorage.setItem('menus', JSON.stringify(snapshot))
+            localStorage.setItem('snapshot', JSON.stringify(snapshot))
         })
 
-        menus = JSON.parse(localStorage.getItem('menus'))
-        console.log(menus)
+        menus = JSON.parse(localStorage.getItem('snapshot'))
+        console.log(snapshot)
     }
     updateDataList()
 
