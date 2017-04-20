@@ -1,4 +1,3 @@
-
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyCJQ5pekW_F421D1uTlK35M4Tdy0BGOocs",
@@ -10,6 +9,8 @@
   };
   firebase.initializeApp(config);
 
+
+  
     function toggleSignIn() {
       if (firebase.auth().currentUser) {
         firebase.auth().signOut();
@@ -56,6 +57,13 @@
           console.log("user logged in")
           console.log(user)
           alert('Youve Been Logged in')
+          // log out cntrls n
+          document.getElementById('quickstart-sign-out').addEventListener('click', function(){
+                  console.log('Log out function started')
+                  firebase.auth().signOut();
+                  alert('You have been logged out') }, false);
+                
+  
         } else {
           // User is signed out.
 
@@ -66,6 +74,7 @@
       });
     
       document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
+          
     }
     window.onload = function() {
       initApp();
