@@ -30,10 +30,64 @@
             </ul>
             <button type="button" class="btn  btn-lg" data-toggle="modal" data-target="#item">
                 New Item
-            </button>
+            </button><br>
             <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#createMenu">
                     Create A Menu
             </button>
+
+            <!-- Menu Modal -->
+                <div class="modal fade" id="itemModify" tabindex="-1" role="dialog" aria-labelledby="itemModifyLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="itemModifyLabel">Modify Item</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form class="form-horizontal">
+                                    <fieldset>
+
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                    <label class="col-md-4 control-label" for="itemNameInput">Name</label>  
+                                    <div class="col-md-4">
+                                    <input id="itemNameInput" name="itemNameInput" type="text" placeholder="" class="form-control input-md">
+                                        
+                                    </div>
+                                    </div>
+
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                    <label class="col-md-4 control-label" for="itemPriceMenu">Price</label>  
+                                    <div class="col-md-4">
+                                    <input id="itemPriceMenu" name="itemPriceMenu" type="text" placeholder="" class="form-control input-md">
+                                        
+                                    </div>
+                                    </div>
+
+                                    <!-- Textarea -->
+                                    <div class="form-group">
+                                    <label class="col-md-4 control-label" for="itemDescInput">Description</label>
+                                    <div class="col-md-4">                     
+                                        <textarea class="form-control" id="itemDescInput" name="itemDescInput"></textarea>
+                                    </div>
+                                    </div>
+
+                                    </fieldset>
+                                </form>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button id="itemModify" class="btn btn-primary" type="button">Create New Menu</button>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+
+
+
             <!-- Menu Modal -->
                 <div class="modal fade" id="createMenu" tabindex="-1" role="dialog" aria-labelledby="createMenuLabel">
                     <div class="modal-dialog" role="document">
@@ -209,7 +263,9 @@
                 </div>
         </div>
 
-
+<div class="col-md-6">
+    
+</div>
 
     </section>
     <!--Scripts-->

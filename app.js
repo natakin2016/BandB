@@ -23,6 +23,7 @@
         console.log(snapshot)
     }
     updateDataList()
+    console.log(menus)
 
 //Menu Creation
     function Menu(name, place, phoneNum, mon, tues, wed, thurs, fri, sat, sun) {
@@ -47,7 +48,7 @@
     $('#createMenu').click(function () {
         if (!$('#name').val() || !$('#address').val() || !$('#phone').val() || !$('#monday').val() ||
             !$('#tuesday').val() || !$('#wednesday').val() || !$('#thursday').val() || !$('#friday').val() || !$('#saturday').val() || !$('#sunday').val()) {
-            alert('Oops you forgot a Field in the Form')
+            
         } else {
             createMenu($('#name').val(), $('#address').val(), $('#phone').val(), $('#monday').val(),
                 $('#tuesday').val(), $('#wednesday').val(), $('#thursday').val(), $('#friday').val(),
@@ -65,7 +66,7 @@
         this.price=price
         this.id=id
     }
-var id=1
+    var id=1
     function createItem(name,desc,price,menu,id){
         firebase.database().ref(`menus/${menu}/item`).child(`${name}`).set(new Item(name,desc,price,id))
     }
@@ -77,6 +78,26 @@ var id=1
         console.log($('#itemName').val(),$('#desc').val(),$('#price').val(),$('#menuList').val(),id)
         
     })
+    function itemMod(itemName,menuName){
+        var i=0
+        console.log(`the item id: ${itemName}, in ${menuName}`)
+        for(var x in menus){
+            if(x==menuName){
+                console.log(`Item Mod function is in ${menuName}`)
+               for(var y in menus[x].item ){
+                   var spot=menus[x].item[`${y}`]
+                   var spotId=menus[x].item[`${y}`].id
+                   if(spotId==itemName){
+                       $('#myModal').modal('show')   
+                       $('#itemNameInput').attr('placeholder',`${spot.itemName}`)
+                       $('#itemPriceInput').attr('placeholder',`${spot.price}`)
+                       $('#itemDescInput').attr('placeholder',`${spot.desc}`)
+                       console.log(`The ${spot.itemName}'s ID is ${spotId}'`)
+                   }
+               }
+            }
+        }
+    }
 
 //Draw Functions
     function drawAllMenuNames(menus){
@@ -94,48 +115,17 @@ var id=1
         for(var x in menus){
             if(x==name){
                 console.log(`${x}=='${name}'`)
+                $('#menuBody').text("")
                for(var y in menus[x].item ){
                    i=i+1
-                    //console.log(menus[x].item[`${y}`].itemName)
-                    $('#menuBody').append(`${i}: ${menus[x].item[`${y}`].itemName}<br>`)
+                   var spot=menus[x].item[`${y}`].itemName
+                   var spotId=menus[x].item[`${y}`].id
+                    $('#menuBody').append(`<span id="${spotId}" data-toggle="modal" data-target="#itemModify" data-dismiss="modal" onclick="itemMod(${spotId},'${name}')">${i}:${spot}</span><br>`)
+                    
                }
             }
         }
     }
 
-    function drawChalkboard(name){
-        var i=1
-        for(var x in menus){
-            if(x==name){
-                console.log(`${x}=='${name}'`)
-               for(var y in menus[x].item ){
-                   if(menus[x].item[y].id%2){
-                       console.log(i)
-                       //console.log(menus[x].item[`${y}`].itemName)
-                        $('#col1').append(`
-                        <strong><h3> ${menus[x].item[`${y}`].itemName}</h3>
-                        <h4>${menus[x].item[`${y}`].price}</h4>
-                        <h4>${menus[x].item[`${y}`].desc}</h4>
-                        </strong><br>`)
-                        i=i+1 
-                        console.log(i)
-                   }
-                   else if(menus[x].item[y].id%3){
-                       console.log(i)
-                        //console.log(menus[x].item[`${y}`].itemName)
-                        $('#col2').append(`
-                        <strong><h3> ${menus[x].item[`${y}`].itemName}</h3>
-                        <h4>${menus[x].item[`${y}`].price}</h4>
-                        <h4>${menus[x].item[`${y}`].desc}</h4>
-                        </strong><br>`)
-                        console.log(i)
-                        i=i+1
-
-                   }
-               }
-            }
-        }
-    }
-
+    
 drawAllMenuNames(menus)
-$('#chalkboard').load(drawChalkboard('Classic'))

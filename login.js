@@ -9,8 +9,6 @@
   };
   firebase.initializeApp(config);
 
-
-  
     function toggleSignIn() {
       if (firebase.auth().currentUser) {
         firebase.auth().signOut();
@@ -62,7 +60,7 @@
                   console.log('Log out function started')
                   firebase.auth().signOut();
                   alert('You have been logged out') }, false);
-                
+            window.location.href="/admin.html" 
   
         } else {
           // User is signed out.
